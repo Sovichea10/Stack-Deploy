@@ -1,18 +1,27 @@
 # Docker-Swarm
 Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster.
 
-# Docker command
-1. docker images : list images in docker
-2. docker ps -a : list all containers
-3. docker ps : list all running containers
-4. docker start "container_id" : start container
-5. docker stop "container_id" : stop container
-6. docker rm "container_id" : remove container
-7. docker rmi "image_id or image_name:tag" : remove image
-8. docker system prune : remove all unused containers & images
-9. docker build -t "new image_name" . : build image from dockerfile
-10. docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG] : tag image in order to push in registry
-11. docker push [NAME]:TAG : push to registry
+## Docker command
+List images in docker:
+```sh
+docker images
+``` 
+List all containers:
+```sh 
+docker ps -a
+```
+List all running containers:
+```sh 
+docker ps 
+```
+5. docker start "container_id" : start container
+6. docker stop "container_id" : stop container
+7. docker rm "container_id" : remove container
+8. docker rmi "image_id or image_name:tag" : remove image
+9. docker system prune : remove all unused containers & images
+10. docker build -t "new image_name" . : build image from dockerfile
+11. docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG] : tag image in order to push in registry
+12. docker push [NAME]:TAG : push to registry
 
 # Docker-compose command
 1. docker-compose up -d : build image to create container
