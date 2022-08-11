@@ -19,5 +19,6 @@ Docker Swarm is a group of either physical or virtual machines that are running 
 # Swarm command
 1. docker swarm init --advertise-addr "IP Server"(e.g 192.168.99.121) : create swarm
 2. docker stack deploy --compose-file docker-stack-deploy.yml "project_name"(e.g pos) : build stack to create replicas
-3. docker serivce create --name "name" -p port:mapport --replicas="count" "image_name": create service replicas
-
+3. docker serivce create --name "name" -p port:mapport --replicas="count" "image_name" : create replicas service
+4. docker service ls : list replicas service
+5. docker service rm "service_name"(e.g pos-api) : remove service
