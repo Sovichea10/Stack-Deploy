@@ -29,13 +29,25 @@ docker rm "container_id"
 Remove image:
 ```sh
 docker rmi "image_id or image_name:tag"
+```
+Remove all unused containers & images:
+```sh
+docker system prune
 ``` 
-9. docker system prune : remove all unused containers & images
-10. docker build -t "new image_name" . : build image from dockerfile
-11. docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG] : tag image in order to push in registry
-12. docker push [NAME]:TAG : push to registry
+Build image from dockerfile:
+```sh
+docker build -t "new image_name" .
+```
+Tag image 
+```sh 
+docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]  
+```
+Push to registry:
+```sh
+docker push [NAME]:TAG 
+``` 
 
-# Docker-compose command
+## Docker-compose command
 1. docker-compose up -d : build image to create container
 2. docker-compose up -d --build : rebuild on updated compose-file
 3. docker-compose config : config testing the proper compose-file
