@@ -48,9 +48,18 @@ docker push [NAME]:TAG
 ``` 
 
 ## Docker-compose command
-1. docker-compose up -d : build image to create container
-2. docker-compose up -d --build : rebuild on updated compose-file
-3. docker-compose config : config testing the proper compose-file
+Build image to create container:
+```sh
+docker-compose up -d
+```
+Rebuild on updated compose-file:
+```sh
+docker-compose up -d --build
+```
+Config testing:
+```sh
+docker-compose config
+``` 
 
 # Swarm command
 1. docker swarm init --advertise-addr "IP Server"(e.g 192.168.99.121) : create swarm
