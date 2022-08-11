@@ -1,0 +1,63 @@
+version: "3.8"
+services: 
+    
+    #==============================================>> MYSQL Database
+    db: 
+        image: mysql:5.7.22
+        container_name: pos-db
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "1027:3306"
+        environment:
+            MYSQL_DATABASE: homestead
+            MYSQl_USER: homestead
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: secret
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        volumes:
+            - ./db/mysql:/var/lib/mysql
+        networks:
+            - pos
+
+    #==============================================>> LARAVEL API
+    api: 
+        container_name: pos-api  
+        build: 
+            context: ./api/.
+            dockerfile: Dockerfile
+        volumes: 
+            - ./api/app:/var/www/app
+            - ./api/resources:/var/www/resources
+            - ./api/routes:/var/www/routes
+            - ./api/database:/var/www/database
+            - ./api/storage:/var/www/storage
+            - ./api/config:/var/www/config
+        command: php artisan --host=0.0.0.0 serve
+        ports:
+            - "1026:8000"
+        environment: 
+            DB_HOST: db
+            DB_PORT: 3306
+            DB_DATABASE: minimmart_local_db
+            DB_USERNAME: root
+            DB_PASSWORD: secret
+        networks: 
+            - pos
+    
+    #==============================================>> ANGULAR Web
+    web: 
+        container_name: web
+        build:
+            context: ./web-v2/.
+            dockerfile: Dockerfile
+        volumes:
+            - ./web/src:/usr/src
+        command: ng serve --host 0.0.0.0
+        ports:
+            - "1028:8080"
+        networks: 
+            - pos
+networks: 
+    pos:

@@ -1,0 +1,28 @@
+version: "3.8"
+services: 
+  api: 
+    image: api
+    build: 
+        context: ./api/.
+        dockerfile: Dockerfile
+    volumes: 
+        - ./api/app:/var/www/app
+        - ./api/resources:/var/www/resources
+        - ./api/routes:/var/www/routes
+        - ./api/storage:/var/www/storage
+    command: php artisan --host=0.0.0.0 serve
+    ports:
+        - "1027:8000"
+    environment: 
+        DB_HOST: mysql
+        DB_PORT: 3306
+        DB_DATABASE: camcyber_pos
+        DB_USERNAME: root
+        DB_PASSWORD: secret
+    deploy:
+        mode: replicated
+        replicas: 5
+    networks: 
+        - pos
+networks: 
+    pos:
