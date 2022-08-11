@@ -22,7 +22,7 @@ Stop container:
 ```sh
 docker stop "container_id" 
 ```
-Remove container:
+### Remove container:
 ```sh
 docker rm "container_id"
 ``` 
