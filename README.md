@@ -14,10 +14,22 @@ List all running containers:
 ```sh 
 docker ps 
 ```
-5. docker start "container_id" : start container
-6. docker stop "container_id" : stop container
-7. docker rm "container_id" : remove container
-8. docker rmi "image_id or image_name:tag" : remove image
+Start container:
+```sh
+docker start "container_id"
+``` 
+Stop container:
+```sh
+docker stop "container_id" 
+```
+Remove container:
+```sh
+docker rm "container_id"
+``` 
+Remove image:
+```sh
+docker rmi "image_id or image_name:tag"
+``` 
 9. docker system prune : remove all unused containers & images
 10. docker build -t "new image_name" . : build image from dockerfile
 11. docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG] : tag image in order to push in registry
