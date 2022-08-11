@@ -21,7 +21,7 @@ services:
         networks:
             - pos
 
-    #==============================================>> LARAVEL API
+    #==============================================>> LARAVEL Api
     api: 
         container_name: pos-api  
         build: 
