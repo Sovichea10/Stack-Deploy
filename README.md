@@ -12,8 +12,9 @@ Docker Swarm is a group of either physical or virtual machines that are running 
 8. docker system prune : remove all unused containers & images
 
 # Docker-compose command
-1 docker-compose up -d : build image to create container
-2 docker-compose up -d --build : rebuild on updated compose-file
+1. docker-compose up -d : build image to create container
+2. docker-compose up -d --build : rebuild on updated compose-file
+3. docker-compose config : config testing the proper compose-file
 
 # Swarm command
 1. docker swarm init --advertise-addr "IP Server"(e.g 192.168.99.121) : create swarm
