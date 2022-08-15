@@ -40,6 +40,10 @@ Build image from dockerfile:
 ```sh
 docker build -t "new image_name" .
 ```
+Build image from another image:
+```sh
+docker tag [exist_image]:[TAG] [new_image]:[TAG]
+```
 Tag image 
 ```sh 
 docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]  
