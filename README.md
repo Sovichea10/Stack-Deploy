@@ -40,6 +40,10 @@ Build image from dockerfile:
 ```sh
 docker build -t "new image_name" .
 ```
+Create container from image:
+```sh
+docker run --name "container_name" -d -p 8080:80 [image]
+```
 Build image from another image:
 ```sh
 docker tag [exist_image]:[TAG] [new_image]:[TAG]
