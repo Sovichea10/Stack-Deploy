@@ -84,7 +84,7 @@ docker stack deploy --compose-file docker-stack-deploy.yml "project_name"(e.g po
 ```
 Create replicas service:
 ```sh
-docker serivce create --name "name" -p port:mapport --replicas="count" "image_name" 
+docker serivce create --name "name" -p port:mapport --replicas="count" [image_name]:[tag] 
 ```
 List replicas service:
 ```sh
