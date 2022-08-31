@@ -86,9 +86,17 @@ Create replicas service:
 ```sh
 docker serivce create --name "name" -p port:mapport --replicas="count" [image_name]:[tag] 
 ```
-List replicas service:
+List service:
 ```sh
 docker service ls
+```
+Scale single service:
+```sh
+docker service scale [service-name]="count"
+```
+Scale multiple service:
+```sh
+docker service scale [service1]="count" [service2]="count"
 ```
 Remove service
 ```sh
