@@ -36,6 +36,10 @@ Remove all unused containers & images:
 ```sh
 docker system prune
 ``` 
+Remove all images:
+```sh
+docker image prune --all
+```
 Build image from dockerfile:
 ```sh
 docker build -t "new image_name" .
