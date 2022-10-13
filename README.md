@@ -40,6 +40,10 @@ Remove all images:
 ```sh
 docker image prune --all
 ```
+Remove none images:
+```sh
+docker image prune
+```
 Build image from dockerfile:
 ```sh
 docker build -t "new image_name" .
