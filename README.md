@@ -13,9 +13,9 @@ List all containers:
 docker ps -a
 ```
 List all running containers:
-```sh 
+` 
 docker ps 
-```
+`
 Start container:
 ```sh
 docker start "container_id"
