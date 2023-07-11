@@ -24,7 +24,7 @@ Stop container:
 ```sh
 docker stop "container_id" 
 ```
-### Remove container:
+Remove container:
 ```sh
 docker rm "container_id"
 ``` 
@@ -32,10 +32,14 @@ Remove image:
 ```sh
 docker rmi "image_id or image_name:tag"
 ```
-Remove all unused containers & images:
+Remove all unused containers, networks and clear cache memory:
 ```sh
 docker system prune
-``` 
+```
+Remove all unused images, containers and networks:
+```sh
+docker system prune -a
+```
 Remove all images:
 ```sh
 docker image prune --all
@@ -47,6 +51,10 @@ docker image prune
 Build image from dockerfile:
 ```sh
 docker build -t "new image_name" .
+```
+Build image from custom dockerfile name:
+```sh
+docker build -f <dockerfile_name> -t .
 ```
 Create container from image:
 ```sh
@@ -78,7 +86,11 @@ docker-compose up -d --build
 Config testing:
 ```sh
 docker-compose config
-``` 
+```
+Stop and Remove Containers:
+```sh
+docker-compose down
+```
 
 ## Swarm command
 
@@ -92,7 +104,7 @@ docker stack deploy --compose-file docker-stack-deploy.yml "project_name"(e.g po
 ```
 Create replicas service:
 ```sh
-docker serivce create --name "name" -p port:mapport --replicas="count" [image_name]:[tag] 
+docker serivce create --name "name" -p published_port:default_port --replicas="count" [image_name]:[tag] 
 ```
 List service:
 ```sh
