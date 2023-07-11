@@ -1,3 +1,4 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 # Docker-Swarm
 
 Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster.
