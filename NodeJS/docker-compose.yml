@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  nodejs:
+    container_name: nodejs-project
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./index.js:/usr/app/index.js
+    ports:
+      - 3010:3010
+    networks:
+      - nodejs
+networks:
+  nodejs:
+    driver: bride
+    

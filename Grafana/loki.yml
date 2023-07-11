@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  loki:
+    image: grafana/loki
+    container_name: loki
+    restart: unless-stopped
+    volumes:
+        - ./loki-config/:/etc/loki/
+    command: --config.file=/etc/loki/loki-local-config.yml
+    ports:
+        - 3100:3100
+    networks:
+        - loki
+networks:
+  loki:
+    driver: bridge

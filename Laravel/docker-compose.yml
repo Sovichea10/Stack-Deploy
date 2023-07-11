@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  # ==================================================================>> Laravel API
+  api:
+    container_name: laravel-api
+    hostname: laravel
+    build:
+      context: .
+      dockerfile: Dockerfile-artisan
+    # restart: on-failure
+    # command: ["sleep","infinity"]"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      # =======================>> Oracle DB
+      DB_CONNECTION: ${DB_CONNECTION}
+      DB_TNS: ${DB_TNS}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      # =======================>> MySQL DB
+      # DB_CONNECTION: ${DB_CONNECTION}
+      # DB_HOST: ${DB_HOST}
+      # DB_PORT: ${DB_PORT}
+      # DB_DATABASE: ${DB_DATABASE}
+      # DB_USERNAME: ${DB_USERNAME}
+      # DB_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - api
+networks:
+  api:
+    driver: bridge

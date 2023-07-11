@@ -1,0 +1,30 @@
+#===============================| Please use docker compose version '3.8' |======================================
+version: "3.8"
+services: 
+  api: 
+    image: [image_name]
+    volumes:
+    # **Note: Make sure you have to do persistent volume with right path 
+        - ./api/app:/var/www/app
+        - ./api/resources:/var/www/resources
+        - ./api/routes:/var/www/routes
+        - ./api/storage:/var/www/storage
+    ports:
+        # published port:default port
+        - "8000:8000"
+    environment: 
+        DB_HOST: ${DB_HOST}
+        DB_PORT: ${DB_PORT}
+        DB_DATABASE: ${DB_DATABASE}
+        DB_USERNAME: ${DB_USERNAME}
+        DB_PASSWORD: ${DB_PASSWORD}
+    deploy:
+        mode: replicated
+        replicas: 5
+    networks: 
+        - api
+networks: 
+    api:
+        driver: overlay
+
+# ******************************* For Laravel API Docker Swarm

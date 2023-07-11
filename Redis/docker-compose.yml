@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  cache:
+    image: redis:6.2-alpine
+    container_name: redis-cache
+    # default port 6379
+    volumes:
+      - ./cache-data:/data
+    networks:
+      - cache
+networks:
+  cache:
+    driver: bridge 
+
+# *************************In this case, need to be in the same network with other service which use redis
+    # networks:
+        # - <network_name>
+# networks:
+  # <network_name>
+      # external: true

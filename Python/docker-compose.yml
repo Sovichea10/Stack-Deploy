@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  python:
+    container_name: python-fastapi
+    hostname: python
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8012:8012'
+    volumes:
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
+      - ./:/var/www/python
+    networks:
+      - python
+networks:
+  python:
