@@ -1,0 +1,12 @@
+body {
+    background-color: grey;
+}
+.center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    text-align: center;
+}

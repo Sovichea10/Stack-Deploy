@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  php-nginx:
+    container_name: php-nginx
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # command: ["sleep","infinity"]
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./test.conf:/etc/nginx/http.d/test.conf
+    ports:
+      - "8000:80"
+    networks:
+      - php-nginx
+networks:
+  php-nginx:
+    driver: bridge
