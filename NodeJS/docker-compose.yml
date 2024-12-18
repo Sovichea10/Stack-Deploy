@@ -14,5 +14,5 @@ services:
       - nodejs
 networks:
   nodejs:
-    driver: bride
+    driver: bridge
     

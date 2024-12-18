@@ -18,7 +18,7 @@ services:
     # Backup Data in pgdata
       - ./pgdata:/var/lib/postgresql/data
     networks:
-      - postgres:
+      - postgres
 networks:
   postgres:
     driver: bridge
